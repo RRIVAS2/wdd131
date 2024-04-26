@@ -1,0 +1,39 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style for the card container */
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+/* Style for individual cards */
+.card {
+    flex: 1;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.card:last-child {
+    margin-right: 0; /* Remove margin from the last card */
+}
