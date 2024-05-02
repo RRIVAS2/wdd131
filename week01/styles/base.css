@@ -11,7 +11,6 @@
 
 header {
     background-color: #29475b;
-    display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -21,7 +20,9 @@ header {
 
 h1 {
     font-size: 4rem;
-    color: #fff
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
 }
 
 
@@ -29,16 +30,15 @@ nav {
     background-color: #29475b;
     margin: 0 auto;
     max-width: 100%;
-    display: block;
-    
 }
 
 nav ul {
     list-style-type: none;
+    display: block;
 }
 
 nav a {
-    display: block;
+    display: flex;
     color: #fff;
     text-align: center;
     padding: 1rem;
