@@ -107,9 +107,6 @@ div {
     grid-row: 1/2;
 }
 
-img {
-    overflow-clip-margin: content-box;
-}
 
 #top img {
     grid-column: 3 / 4;
