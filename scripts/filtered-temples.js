@@ -99,17 +99,60 @@ const temples = [
 
   createTempleCard(temples);
 
+  const homeLink = document.querySelector("#home");
   const oldLink = document.querySelector("#old");
   const newLink = document.querySelector("#new");
   const largeLink = document.querySelector("#large");
   const smallLink = document.querySelector("#small");
 
+
+  homeLink.addEventListener("click", () => {
+	createTempleCard(temples)
+	});
+
   oldLink.addEventListener("click", () => {
-    createTempleCard(temples.filter(temple.dedicated.getFullYear() < 1900));
+	const filteredTemples = temples.filter(temple => {
+	  // Parse the dedicated string into a Date object
+	  const dedicatedDate = new Date(temple.dedicated.split(",").reverse().join(" "));
+	  return dedicatedDate.getFullYear() < 1900;
+	});
+  
+	if (filteredTemples.length === 0) {
+	  // No temples found before 1900
+	  document.querySelector(".res-grid").innerHTML = "There are no temples dedicated before 1900.";
+	} else {
+	  createTempleCard(filteredTemples);
+	}
   });
+
+  newLink.addEventListener("click", () => {
+	const filteredTemples = temples.filter(temple => {
+	  // Parse the dedicated string into a Date object
+	  const dedicatedDate = new Date(temple.dedicated.split(",").reverse().join(" "));
+	  return dedicatedDate.getFullYear() > 2000;
+	});
+
+	if (filteredTemples.length === 0) {
+	  // No temples found after 2000
+	  document.querySelector(".res-grid").innerHTML = "There are no temples dedicated before 1900.";
+	} else {
+	  createTempleCard(filteredTemples);
+	}
+  });
+
+	largeLink.addEventListener("click", () => {
+		createTempleCard(temples.filter(temple => temple.area > 90000)
+		)});
+
+	smallLink.addEventListener("click", () => {
+		createTempleCard(temples.filter(temple => temple.area < 10000)
+		)});
+
+
 
 
   function createTempleCard(filteredTemples) {
+	document.querySelector(".res-grid").innerHTML = "";
 	filteredTemples.forEach(temple => {
 	  let card = document.createElement("section");
 	  let name = document.createElement("h3");
