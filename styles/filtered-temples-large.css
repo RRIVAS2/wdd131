@@ -1,0 +1,25 @@
+@media screen and (min-width: 880px) {
+    header {
+		display: flex;
+		align-items: center;
+	    justify-content: space-between;
+	}
+  
+    #hambutton {
+      display: none;
+    }
+  
+    nav {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  
+    nav a {
+      display: block;
+      font-size: 1.5rem;
+    }
+
+    #menu {
+        display: none; /* hide hamburger button */
+    }
+  }
