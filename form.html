@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Dynamic Web Fundamentals - Product Review Form</title>
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Week05 Assignment">
+    <meta name="author" content="Ricardo Rivas">
+    <link rel="stylesheet" type="text/css" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<main>
+    <header>
+        <h1>Product Review</h1>
+        
+      </header>
+
+    <form method="get" action="review.html" class="wf1">
+        
+            <!--<legend>Applicant Information</legend>-->
+            <div>
+            <label>Product Name</label>
+                <select name="productname" id="productname" required>
+                    <option value="Choose a Product..." selected disabled>Choose a Product... &#9662;</option>
+                </select>
+            </div>
+
+            <label>Overall Rating</label>
+                <div class="radio">
+                    <label for="overall-1">&star;</label>
+                    <label for="overall-2">&star;&star;</label>
+                    <label for="overall-3">&star;&star;&star;</label>
+                    <label for="overall-4">&star;&star;&star;&star;</label>
+                    <label for="overall-5">&star;&star;&star;&star;&star;</label>
+                    <input type="radio" id="rating1" name="rating" required>
+                    <input type="radio" id="rating2" name="rating" required>
+                    <input type="radio" id="rating3" name="rating" required>
+                    <input type="radio" id="rating4" name="rating" required>
+                    <input type="radio" id="rating5" name="rating" required>
+                </div>
+
+            <div>
+                <label>Anticipated Completion Date <input type="date" id="installationdate" name="installationdate" required></label>
+            </div>
+
+            <label>Which features did you find useful in the product?</label>
+            <br>
+            <p id="italic">(Check all that apply)</p>
+            <br>
+            <div class="checkboxsection">
+                <input type="checkbox" id="durablility" name="durability" value="durability">
+                <label for="durablility">Durability</label>
+                <input type="checkbox" id="ease" name="ease" value="ease">
+                <label for="ease">Ease of Use</label>
+                <input type="checkbox" id="performance" name="performance" value="performance">
+                <label for="performance">Performance</label>
+                <input type="checkbox" id="design" name="design" value="design">
+                <label for="design">Design</label>
+            </div>
+            
+            <div>
+                <label>Written Review <span class="small">(Optional)</span></label>
+                <textarea id="writtenreview" name="writtenreview"></textarea>
+              </div>
+        
+
+            <div>
+                <label>User Name <span class="small">(Optional)</span></label>
+                <input type="text" id="username" name="username">
+            </div>
+            
+            <input type="submit" value="Post Review">
+            
+    </form>
+</main>
+    <footer>
+        <p><span id="currentYear"></span> - Ricardo Rivas</p>
+        <p id="lastModified">Last Modification: 01/01/1970 12:00:00</p>
+    </footer>
+</body>
+</html>

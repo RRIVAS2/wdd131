@@ -1,0 +1,197 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F8F9FA; /* Light Gray */
+    color: #333333; /* Dark Gray for text */
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #08605F;
+    color: #FFFFFF;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    display: none;
+    font-size: 20px;
+  
+  }
+  
+  nav a:hover {
+  border: 3px solid #2BD9FE;
+  color: #2BD9FE;
+  font-weight: 700;
+  }
+  
+  header button#menu {
+  font-size: 2.5rem;
+  border: 0;
+  background: none;
+  color: #FFFFFF;
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+  }
+  
+  #menu::before {
+  content: "☰";
+  }
+  
+  #menu.open::before {
+  content: "❎";
+  }
+  
+  .open a {
+  display: block;
+    text-align: center;
+  }
+  
+  nav.open {
+    width: 100%;
+  }
+    
+  
+  
+  main {
+    padding: 80px 20px 20px 20px; /* Adjust padding to avoid overlap with fixed header */
+  }
+  
+  .job-listings {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFFFFF; /* White */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .job-listings h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem; /* Adjust font size for heading */
+    color: #08605F; /* Match header color */
+  }
+
+  #job-listings-container {
+    max-height: 600px; /* Adjust the maximum height as needed */
+    overflow-y: auto; /* Add vertical scrollbar */
+  }
+  
+  .job-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #FFFFFF; /* White */
+    border: 1px solid #ddd; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow */
+    transition: transform 0.3s;
+  }
+  
+  .job-item:hover {
+    transform: scale(1.02);
+  }
+  
+  .job-description,
+  .job-responsibilities,
+  .job-qualifications,
+  .job-education {
+    display: none; /* Hide by default */
+  }
+  
+  .job-item:hover .job-description {
+    display: block; /* Show when hovered */
+  }
+  
+
+  .job-item.clicked .job-responsibilities,
+  .job-item.clicked .job-qualifications,
+  .job-item.clicked .job-education {
+    display: block;
+  }
+
+
+  .job-title {
+    font-weight: 700;
+    font-size: 1.5em;
+  }
+  
+  .job-company {
+    font-size: 1.2em;
+    color: #007BFF; /* Blue */
+  }
+  
+  .job-location {
+    font-size: 1em;
+    color: #6C757D; /* Gray */
+  }
+  
+  .job-salary {
+    font-size: 1em;
+    color: #52AA5E; /* Green */
+  }
+  
+  .job-date {
+    font-size: 0.9em;
+    color: #6C757D; /* Gray */
+  }
+  
+  .job-description {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #333333; /* Dark Gray */
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #08605F; /* Match header color */
+    color: #FFFFFF; /* White */
+    position: relative;
+    width: 100%;
+  }
+  
+  footer p {
+    margin: 5px 0;
+  }
+  
+  @media screen and (min-width: 800px) {
+    header nav.navigation {
+      display: flex; /* Display nav links in a row for larger screens */
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  
+    header nav.navigation a {
+      display: block;
+      font-size: 1.5rem;
+      margin: 0 25px;
+    }
+  
+    header button#menu {
+      display: none; /* Hide menu button for larger screens */
+    }
+  
+    header #menu {
+      display: none; /* Hide hamburger button */
+    }
+  }
